@@ -31,8 +31,7 @@ function startWebsocket(accessToken) {
             if (message.type === 'utf8') {
                 const data = JSON.parse(message.utf8Data);
                 if (data[0] === 5) {
-                    if ('rs' in data[1] && 'sid' in data[1]) {
-                        const rs = data[1].rs;
+                    if ('sid' in data[1]) {
                         const sid = data[1].sid;
                         if (sid==currentSid){
                             var d1=data[1].d1;
